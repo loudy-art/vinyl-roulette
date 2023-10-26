@@ -22,6 +22,7 @@ seed_tracks = [
     "spotify:track:7r6bRPWi8nxQ3AUu9aOgSY",
 ]
 
+seed_genres = "jazz,bossa nova"
 # Randomly select a seed artist and seed track
 random_seed_artist = random.choice(seed_artist_ids)
 random_seed_track = random.choice(seed_tracks)
@@ -30,7 +31,7 @@ random_seed_track = random.choice(seed_tracks)
 #print(random_seed_track)
 
 # Perform a search for album recommendations based on the random seed artist and seed track
-results = sp.recommendations(seed_artists=[random_seed_artist], seed_tracks=[random_seed_track], limit=1)
+results = sp.recommendations(seed_artists=[random_seed_artist], seed_tracks=[random_seed_track], seed_genres=[seed_genres], limit=1)
 
 # Check if there are album recommendations
 if results and 'tracks' in results:
